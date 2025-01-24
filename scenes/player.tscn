@@ -256,9 +256,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ppfx5")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -291,9 +291,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tkn2f")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -329,9 +329,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0sk0p")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -346,7 +346,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4hp6w")
 }],
-"loop": true,
+"loop": false,
 "name": &"block",
 "speed": 5.0
 }, {
@@ -363,7 +363,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8cmyh")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -380,7 +380,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4ybva")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -411,7 +411,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y8400")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -440,7 +440,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ck1mj")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
 "speed": 5.0
 }]
@@ -453,6 +453,5 @@ shape = SubResource("CapsuleShape2D_64a0x")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vbdlt")
-animation = &"block"
+animation = &"attack3"
 autoplay = "idle"
-frame_progress = 0.757551
