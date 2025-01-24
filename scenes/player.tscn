@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dnqinl7uq7urf" path="res://assets/characters/Characters(100x100)/Knight/Knight/Knight-Death.png" id="6_b6fj6"]
 [ext_resource type="Texture2D" uid="uid://c2m52xtu068om" path="res://assets/characters/Characters(100x100)/Knight/Knight/Knight-Hurt.png" id="7_cxe4x"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_64a0x"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_x36r2"]
 atlas = ExtResource("2_koy8f")
 region = Rect2(0, 0, 100, 100)
@@ -445,13 +443,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_64a0x"]
+radius = 3.5
+height = 13.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_2jrum")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_64a0x")
-
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vbdlt")
 animation = &"attack3"
 autoplay = "idle"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_64a0x")
