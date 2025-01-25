@@ -1,6 +1,58 @@
-[gd_scene load_steps=2 format=3 uid="uid://c85awf8q6tkva"]
+[gd_scene load_steps=11 format=3 uid="uid://c85awf8q6tkva"]
 
 [ext_resource type="Texture2D" uid="uid://dowfrx1suo2ag" path="res://assets/background/UI/Banners/Banner_Vertical.png" id="1_8x3eb"]
+[ext_resource type="Script" path="res://scripts/select_character.gd" id="3_ekc5k"]
+[ext_resource type="Texture2D" uid="uid://dml16mqdhe06" path="res://assets/characters/Characters(100x100)/Knight/Knight/Knight-Idle.png" id="4_3p26j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bk2r"]
+atlas = ExtResource("4_3p26j")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7u71"]
+atlas = ExtResource("4_3p26j")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phsb5"]
+atlas = ExtResource("4_3p26j")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4umb"]
+atlas = ExtResource("4_3p26j")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sltk"]
+atlas = ExtResource("4_3p26j")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0doc"]
+atlas = ExtResource("4_3p26j")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2vvph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bk2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7u71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phsb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4umb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sltk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0doc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -10,6 +62,19 @@ offset_bottom = 40.0
 texture = ExtResource("1_8x3eb")
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_left = 58.0
+offset_top = 50.0
+offset_right = 98.0
+offset_bottom = 90.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer"]
+position = Vector2(73, 63)
+sprite_frames = SubResource("SpriteFrames_2vvph")
+script = ExtResource("3_ekc5k")
