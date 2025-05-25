@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c85awf8q6tkva"]
 
 [ext_resource type="Texture2D" uid="uid://dowfrx1suo2ag" path="res://assets/background/UI/Banners/Banner_Vertical.png" id="1_8x3eb"]
-[ext_resource type="Script" path="res://scripts/select_character.gd" id="3_ekc5k"]
+[ext_resource type="Script" uid="uid://5yg07eyfvudt" path="res://scripts/select_character.gd" id="3_ekc5k"]
 [ext_resource type="Texture2D" uid="uid://dml16mqdhe06" path="res://assets/characters/Characters(100x100)/Knight/Knight/Knight-Idle.png" id="4_3p26j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4bk2r"]

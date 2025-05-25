@@ -1,6 +1,6 @@
 [gd_scene load_steps=68 format=3 uid="uid://ujfr23pfgkyr"]
 
-[ext_resource type="Script" path="res://scripts/movement.gd" id="1_2jrum"]
+[ext_resource type="Script" uid="uid://bwoundpahwm43" path="res://scripts/movement.gd" id="1_2jrum"]
 [ext_resource type="Texture2D" uid="uid://6tpv0sqlc6xm" path="res://assets/characters/Characters(100x100)/Knight/Knight/Knight-Attack01.png" id="2_koy8f"]
 [ext_resource type="Texture2D" uid="uid://bsajhwoo7ar7j" path="res://assets/characters/Characters(100x100)/Knight/Knight/Knight-Attack02.png" id="3_72s5f"]
 [ext_resource type="Texture2D" uid="uid://dml16mqdhe06" path="res://assets/characters/Characters(100x100)/Knight/Knight/Knight-Idle.png" id="3_n4jkl"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://crla3fm2wrygd" path="res://assets/characters/Characters(100x100)/Knight/Knight/Knight-Block.png" id="5_u0m12"]
 [ext_resource type="Texture2D" uid="uid://dnqinl7uq7urf" path="res://assets/characters/Characters(100x100)/Knight/Knight/Knight-Death.png" id="6_b6fj6"]
 [ext_resource type="Texture2D" uid="uid://c2m52xtu068om" path="res://assets/characters/Characters(100x100)/Knight/Knight/Knight-Hurt.png" id="7_cxe4x"]
-[ext_resource type="Script" path="res://scenes/character.gd" id="10_yfp6i"]
+[ext_resource type="Script" uid="uid://cxxqj1o543b6e" path="res://scenes/character.gd" id="10_yfp6i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x36r2"]
 atlas = ExtResource("2_koy8f")
@@ -448,14 +448,17 @@ animations = [{
 radius = 3.5
 height = 13.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_2jrum")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vbdlt")
-animation = &"attack3"
+animation = &"idle"
 autoplay = "idle"
+frame = 3
+frame_progress = 0.376982
 script = ExtResource("10_yfp6i")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
