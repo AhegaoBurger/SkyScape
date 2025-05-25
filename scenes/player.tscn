@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://ujfr23pfgkyr"]
+[gd_scene load_steps=69 format=3 uid="uid://ujfr23pfgkyr"]
 
 [ext_resource type="Script" uid="uid://bwoundpahwm43" path="res://scripts/player.gd" id="1_2jrum"]
 [ext_resource type="Texture2D" uid="uid://6tpv0sqlc6xm" path="res://assets/characters/Characters(100x100)/Knight/Knight/Knight-Attack01.png" id="2_koy8f"]
@@ -364,7 +364,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -448,6 +448,9 @@ animations = [{
 radius = 3.5
 height = 13.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4r1p"]
+radius = 25.0
+
 [node name="player" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_2jrum")
@@ -455,12 +458,27 @@ script = ExtResource("1_2jrum")
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vbdlt")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
-frame = 3
-frame_progress = 0.376982
 script = ExtResource("10_yfp6i")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_64a0x")
+
+[node name="player_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_y4r1p")
+
+[node name="attack_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="deal_attack_timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]
